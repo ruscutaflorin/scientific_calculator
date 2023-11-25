@@ -45,3 +45,8 @@
 10	341	7225804448004252	CMakeFiles/scientific_calculator.dir/Shunting_Yard.cpp.obj	f52e82eea874850e
 7	348	7225804448061678	CMakeFiles/scientific_calculator.dir/Calculator.cpp.obj	487d458f6df52588
 348	452	7225804449053442	scientific_calculator.exe	f75aede68133a0b4
+2	277	7225811960122700	CMakeFiles/scientific_calculator.dir/main.cpp.obj	198f23393958ae0e
+7	293	7225811960306392	CMakeFiles/scientific_calculator.dir/Shunting_Yard.cpp.obj	f52e82eea874850e
+293	393	7225811961214824	scientific_calculator.exe	f75aede68133a0b4
+2	299	7225813187146000	CMakeFiles/scientific_calculator.dir/Calculator.cpp.obj	487d458f6df52588
+301	391	7225813188045443	scientific_calculator.exe	f75aede68133a0b4

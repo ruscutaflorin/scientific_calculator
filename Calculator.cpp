@@ -33,10 +33,16 @@ int Calculator::operator[](int index)
     }
 }
 
-void Calculator::setExpresie(string expresie) {
+void Calculator::setExpresie( string expresie) {
+    // Remove spaces from the expression
+    string expressionWithoutSpaces;
+    for (char c : expresie) {
+        if (!isspace(c)) {
+            expressionWithoutSpaces += c;
+        }
+    }
 
-    if (expresie.length() > 0)
-        this->expresie = expresie;
+    this->expresie = expressionWithoutSpaces;
 }
 
 string Calculator::getExpresie() {
@@ -63,45 +69,6 @@ double parseNumber(const string& rpn, size_t& pos) {
     return stod(rpn.substr(start, pos - start));
 }
 
-//string Calculator::evalRPN(string rpn) {
-//    Stack operandStack;
-//
-//    size_t pos = 0;
-//    while (pos < rpn.length()) {
-//        if (isdigit(rpn[pos]) || (rpn[pos] == '-' && isdigit(rpn[pos + 1]))) {
-//            double parsedNumber = parseNumber(rpn, pos);
-////            cout << "Parsed Number: " << parsedNumber << endl;
-//            operandStack.push(parsedNumber);
-//        } else if (rpn[pos] == ' ') {
-//            pos++;  // Skip whitespace
-//        } else {
-//            double operand2 = operandStack.getLastElement();
-//            operandStack.pop();
-//            double operand1 = operandStack.getLastElement();
-//            operandStack.pop();
-//
-//            switch (rpn[pos]) {
-//                case '+':
-//                    operandStack.push(operand1 + operand2);
-//                    break;
-//                case '-':
-//                    operandStack.push(operand1 - operand2);
-//                    break;
-//                case '*':
-//                    operandStack.push(operand1 * operand2);
-//                    break;
-//                case '/':
-//                    operandStack.push(operand1 / operand2);
-//                    break;
-//                    // Add more cases for other operators as needed
-//            }
-//            pos++;  // Move to the next character
-//        }
-//    }
-//
-//    // The final result is now on the operandStack
-//    return to_string(operandStack.getLastElement());
-//}
 string Calculator::evalRPN(string rpn) {
     Stack operandStack;
 
