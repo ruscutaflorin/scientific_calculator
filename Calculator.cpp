@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <cmath>
 #include "Calculator.h"
 #include "Shunting_Yard.h"
 using namespace std;
@@ -33,7 +32,7 @@ int Calculator::operator[](int index)
     }
 }
 
-void Calculator::setExpresie( string expresie) {
+void Calculator::setExpresie(string expresie) {
     // Remove spaces from the expression
     string expressionWithoutSpaces;
     for (char c : expresie) {
@@ -61,9 +60,11 @@ string Calculator::getRezultat() {
     return this->rezultat;
 }
 
+
+
 double parseNumber(const string& rpn, size_t& pos) {
     size_t start = pos;
-    while (isdigit(rpn[pos]) || (rpn[pos] == '-' && isdigit(rpn[pos + 1]))) {
+    while (isdigit(rpn[pos]) || rpn[pos] == '.' || (rpn[pos] == '-' && isdigit(rpn[pos + 1]))) {
         pos++;
     }
     return stod(rpn.substr(start, pos - start));
@@ -76,6 +77,7 @@ string Calculator::evalRPN(string rpn) {
     while (pos < rpn.length()) {
         if (isdigit(rpn[pos]) || (rpn[pos] == '-' && isdigit(rpn[pos + 1]))) {
             double parsedNumber = parseNumber(rpn, pos);
+//            cout << endl << parsedNumber << endl;
             operandStack.push(parsedNumber);
         } else if (rpn[pos] == ' ') {
             pos++;  // Skip whitespace
@@ -97,35 +99,71 @@ string Calculator::evalRPN(string rpn) {
                     break;
                 case '/':
                     if (operand2 == 0) {
-                        // Handle division by zero
                         return "Error: Division by zero";
                     }
                     operandStack.push(operand1 / operand2);
                     break;
                 case '^':
-                    operandStack.push(pow(operand1, operand2));
+                    // Implement your own power function
+                    operandStack.push(customPow(operand1, operand2));
                     break;
                 case '#':
-                    if (operand1 < 0 && fmod(operand2, 2) == 0) {
-                        // Handle even root of a negative number
-                        return "Error: Even root of a negative number";
-                    }
-                    operandStack.push(pow(operand1, 1 / operand2));
+                    // Implement your own root function
+                    operandStack.push(customRoot(operand1, operand2));
                     break;
-                    // Add more cases for other operators as needed
             }
             pos++;  // Move to the next character
         }
     }
 
     if (operandStack.getSize() == 1) {
-        // The final result is now on the operandStack
         return to_string(operandStack.getLastElement());
     } else {
-        // Handle invalid expression
         return "Error: Invalid expression";
     }
 }
+
+
+// Implementations for custom power and root functions
+double Calculator::customPow(double base, double exponent) {
+    if (exponent == 0) {
+        return 1.0; // any number to the power of 0 is 1
+    }
+
+    double result = 1.0;
+    bool isNegativeExponent = exponent < 0;
+
+    for (int i = 0; i < abs(exponent); ++i) {
+        result *= base;
+    }
+
+    return isNegativeExponent ? 1.0 / result : result;
+}
+
+double Calculator::customRoot(double base, double exponent) {
+    if (base < 0 && static_cast<int>(exponent) % 2 == 0) {
+        // Handle error for even root of a negative number
+        throw std::domain_error("Error: Even root of a negative number");
+    }
+
+    double result = base; // Initial guess
+
+    if (result == 0.0) {
+        return 0.0; // Special case: root of 0 is 0
+    }
+
+    double epsilon = 1e-10; // A small value to check for close to zero
+    double prevResult = 0.0;
+
+    // Newton's method for finding roots
+    while (abs(result - prevResult) > epsilon) {
+        prevResult = result;
+        result = ((exponent - 1.0) * result + base / customPow(result, exponent - 1)) / exponent;
+    }
+
+    return result;
+}
+
 
 
 ostream& operator << (ostream& out, Calculator c)
@@ -140,7 +178,6 @@ ostream& operator << (ostream& out, Calculator c)
 
     return out;
 }
-
 
 istream& operator>>(istream& in, Calculator& c) {
     cout << "Expresia:";

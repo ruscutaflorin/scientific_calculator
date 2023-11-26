@@ -1,4 +1,3 @@
-//
 // Created by FLORIN on 24.11.2023.
 //
 
@@ -35,6 +34,11 @@ public:
 
     string getRezultat();
     string evalRPN(string rpn);
+
+    // Declarations for custom power and root functions
+    double customPow(double base, double exponent);
+    double customRoot(double base, double exponent);
+
     friend istream& operator>>(istream& in, Calculator& c);
 
     friend ostream& operator << (ostream& out, Calculator c);

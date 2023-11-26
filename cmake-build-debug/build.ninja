@@ -73,6 +73,12 @@ build CMakeFiles/scientific_calculator.dir/Stack.cpp.obj: CXX_COMPILER__scientif
   OBJECT_DIR = CMakeFiles\scientific_calculator.dir
   OBJECT_FILE_DIR = CMakeFiles\scientific_calculator.dir
 
+build CMakeFiles/scientific_calculator.dir/EquationSolver.cpp.obj: CXX_COMPILER__scientific_calculator_Debug C$:/Users/FLORIN/Desktop/stuff/coding/projects/scientific_calculator/EquationSolver.cpp || cmake_object_order_depends_target_scientific_calculator
+  DEP_FILE = CMakeFiles\scientific_calculator.dir\EquationSolver.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\scientific_calculator.dir
+  OBJECT_FILE_DIR = CMakeFiles\scientific_calculator.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target scientific_calculator
@@ -81,7 +87,7 @@ build CMakeFiles/scientific_calculator.dir/Stack.cpp.obj: CXX_COMPILER__scientif
 #############################################
 # Link the executable scientific_calculator.exe
 
-build scientific_calculator.exe: CXX_EXECUTABLE_LINKER__scientific_calculator_Debug CMakeFiles/scientific_calculator.dir/main.cpp.obj CMakeFiles/scientific_calculator.dir/Calculator.cpp.obj CMakeFiles/scientific_calculator.dir/Shunting_Yard.cpp.obj CMakeFiles/scientific_calculator.dir/Stack.cpp.obj
+build scientific_calculator.exe: CXX_EXECUTABLE_LINKER__scientific_calculator_Debug CMakeFiles/scientific_calculator.dir/main.cpp.obj CMakeFiles/scientific_calculator.dir/Calculator.cpp.obj CMakeFiles/scientific_calculator.dir/Shunting_Yard.cpp.obj CMakeFiles/scientific_calculator.dir/Stack.cpp.obj CMakeFiles/scientific_calculator.dir/EquationSolver.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\scientific_calculator.dir
