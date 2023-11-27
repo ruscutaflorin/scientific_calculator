@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Calculator.h"
+#include "EquationSolver.h"
 
 using namespace std;
 
@@ -9,21 +10,42 @@ int main() {
     Calculator c;
 
     while (true) {
-        cout << "Enter expression (type 'exit' to end):";
+        cout << "Calculator Menu:" << endl;
+        cout << "1. Perform a normal calculation" << endl;
+        cout << "2. Solve an equation" << endl;
+        cout << "3. Exit" << endl;
+        cout << "Choose an option (1, 2, or 3): ";
         getline(cin, input);
 
-        if (input == "exit") {
+        if (input == "3" || input == "exit") {
             break;
-        }
-        c.setExpresie(input);
-        size_t xPos = c.getExpresie().find('x');
-        if (xPos != string::npos) {
-            // If 'x' is present, solve the equation
-            c.solveEquation();
-        } else {
-            // If 'x' is not present, evaluate the expression
+        } else if (input == "1") {
+            cout << "Enter expression:";
+            getline(cin, input);
+            c.setExpresie(input);
             c.calculeaza();
-            cout << c;
+            cout << "Result:\n" << c << endl;
+        } else if (input == "2") {
+            cout << "Enter coefficients for the equation:" << endl;
+            cout << "a:";
+            double a;
+            cin >> a;
+            cout << "b:";
+            double b;
+            cin >> b;
+            cout << "c:";
+            double cVal;
+            cin >> cVal;
+
+            if (a == 0) {
+                EquationSolver::solveLinearEquation(b, cVal);
+            } else {
+                EquationSolver::solveQuadraticEquation(a, b, cVal);
+            }
+
+            cin.ignore(); // Ignore the newline character in the input buffer
+        } else {
+            cout << "Invalid option. Please choose 1, 2, or 3." << endl;
         }
     }
 

@@ -35,7 +35,6 @@ public:
     string getRezultat();
     string evalRPN(string rpn);
 
-    // Declarations for custom power and root functions
     double customPow(double base, double exponent);
     double customRoot(double base, double exponent);
 

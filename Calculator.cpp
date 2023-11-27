@@ -80,7 +80,6 @@ string Calculator::evalRPN(string rpn) {
     while (pos < rpn.length()) {
         if (isdigit(rpn[pos]) || (rpn[pos] == '-' && isdigit(rpn[pos + 1]))) {
             double parsedNumber = parseNumber(rpn, pos);
-//            cout << endl << parsedNumber << endl;
             operandStack.push(parsedNumber);
         } else if (rpn[pos] == ' ') {
             pos++;  // Skip whitespace
@@ -107,11 +106,9 @@ string Calculator::evalRPN(string rpn) {
                     operandStack.push(operand1 / operand2);
                     break;
                 case '^':
-                    // Implement your own power function
                     operandStack.push(customPow(operand1, operand2));
                     break;
                 case '#':
-                    // Implement your own root function
                     operandStack.push(customRoot(operand1, operand2));
                     break;
             }
@@ -127,10 +124,9 @@ string Calculator::evalRPN(string rpn) {
 }
 
 
-// Implementations for custom power and root functions
 double Calculator::customPow(double base, double exponent) {
     if (exponent == 0) {
-        return 1.0; // any number to the power of 0 is 1
+        return 1.0;
     }
 
     double result = 1.0;
@@ -149,36 +145,21 @@ double Calculator::customRoot(double base, double exponent) {
         throw std::domain_error("Error: Even root of a negative number");
     }
 
-    double result = base; // Initial guess
+    double result = base;
 
     if (result == 0.0) {
-        return 0.0; // Special case: root of 0 is 0
+        return 0.0;
     }
 
-    double epsilon = 1e-10; // A small value to check for close to zero
+    double epsilon = 1e-10;
     double prevResult = 0.0;
 
-    // Newton's method for finding roots
     while (abs(result - prevResult) > epsilon) {
         prevResult = result;
         result = ((exponent - 1.0) * result + base / customPow(result, exponent - 1)) / exponent;
     }
 
     return result;
-}
-
-void Calculator::solveEquation() {
-    size_t xPos = expresie.find('x');
-    if (xPos != string::npos) {
-        size_t xSquaredPos = expresie.find("x^2");
-        if (xSquaredPos != string::npos) {
-            EquationSolver::solveQuadraticEquation(expresie);
-        } else {
-            EquationSolver::solveLinearEquation(expresie);
-        }
-    } else {
-        cout << "Ecuatia nu contine x, considerat 0" << endl;
-    }
 }
 
 
@@ -188,7 +169,6 @@ ostream& operator << (ostream& out, Calculator c)
     c.calculeaza();
     out << "Rezultat Converie RPN: " << c.getRezultat() << endl;
 
-    // Output the result of evalRPN
     out << "Evaluated RPN: " << c.evalRPN(c.getRezultat()) << endl;
     out << endl;
 

@@ -1,94 +1,32 @@
 #include <iostream>
-#include <valarray>
+#include <cmath>
 #include "EquationSolver.h"
-#include "Calculator.h"
 
-void EquationSolver::solveLinearEquation(const std::string& equation) {
-    // Assuming the linear equation is in the form "ax + b = c"
-    size_t equalPos = equation.find('=');
-    if (equalPos != std::string::npos) {
-        // Split the equation into two parts: "ax + b" and "c"
-        std::string leftPart = equation.substr(0, equalPos);
-        std::string rightPart = equation.substr(equalPos + 1);
+void EquationSolver::solveLinearEquation(double a, double b) {
+    if (a == 0) {
+        std::cout << "Invalid: This is not a linear equation." << std::endl;
+        return;
+    }
 
-        // Parse the left part to get the expression containing 'x'
-        size_t xPos = leftPart.find('x');
-        double a = 1.0;
-        double b = 0.0;
+    double solution = -b / a;
+    std::cout << "Linear equation solution: x = " << solution << std::endl;
+}
 
-        if (xPos != std::string::npos) {
-            std::string xExpression = leftPart.substr(0, xPos);
-            if (!xExpression.empty()) {
-                a = evalExpression(xExpression);
-            }
+void EquationSolver::solveQuadraticEquation(double a, double b, double c) {
+    double discriminant = b * b - 4 * a * c;
 
-            // Parse the remaining part of the left expression
-            if (xPos + 1 < leftPart.size()) {
-                b = evalExpression(leftPart.substr(xPos + 1));
-            }
-        } else {
-            // If there's no 'x' term, the entire left part is the constant term
-            b = evalExpression(leftPart);
-        }
-
-        double c = evalExpression(rightPart);
-
-        // Solve the linear equation
-        if (a == 0) {
-            if (b == c) {
-                std::cout << "Infinite solutions for the linear equation." << std::endl;
-            } else {
-                std::cout << "No solution for the linear equation." << std::endl;
-            }
-        } else {
-            double solution = (c - b) / a;
-            std::cout << "Linear equation solution: x = " << solution << std::endl;
-        }
+    if (discriminant > 0) {
+        double root1 = (-b + std::sqrt(discriminant)) / (2 * a);
+        double root2 = (-b - std::sqrt(discriminant)) / (2 * a);
+        std::cout << "Quadratic equation solutions: x1 = " << root1 << ", x2 = " << root2 << std::endl;
+    } else if (discriminant == 0) {
+        double root = -b / (2 * a);
+        std::cout << "Quadratic equation has a repeated solution: x = " << root << std::endl;
     } else {
-        std::cout << "Linear equation must contain the equal sign '='." << std::endl;
+        double realPart = -b / (2 * a);
+        double imaginaryPart = std::sqrt(-discriminant) / (2 * a);
+        std::cout << "Quadratic equation solutions: x1 = " << realPart << " + " << imaginaryPart << "i, "
+                  << "x2 = " << realPart << " - " << imaginaryPart << "i" << std::endl;
     }
 }
 
-void EquationSolver::solveQuadraticEquation(const std::string &equation) {
-    cout << "nasol";
-}
-
-
-
-
-double EquationSolver::customPow(double base, double exponent) {
-    // Implement your own power function
-    return customPow(base, exponent);
-}
-
-double EquationSolver::customRoot(double base, double exponent) {
-    // Implement your own root function
-    return customRoot(base, exponent);
-}
-//
-double EquationSolver::evalExpression(const std::string& expression) {
-    size_t pos = 0;
-    return parseNumber(expression, pos);
-}
-
-double EquationSolver::parseNumber(const std::string& str, size_t& pos) {
-    size_t start = pos;
-
-    // Check if the first character is '^' (indicating an exponent)
-    if (str[start] == '^') {
-        // Handle the exponent case separately
-        pos++;
-        return 0.0;  // You may want to adjust this based on your specific requirements
-    }
-
-    try {
-        size_t endPos;
-        double result = std::stod(str.substr(start), &endPos);
-//        std::cout << "Parsed number: " << result << std::endl;
-        pos += endPos;
-        return result;
-    } catch (const std::invalid_argument& e) {
-        std::cerr << "Error: Invalid number format at position " << start << ". Substring: '" << str.substr(start) << "'" << std::endl;
-        throw;
-    }
-}

@@ -13,9 +13,9 @@ void Shunting_Yard::operator()(string expresie) {
 
 int Shunting_Yard::validareTip(char op) {
     if (isdigit(op) || op == '.') {
-        return 0; // pentru cifre
+        return 0;
     } else if (op == '+' || op == '-' || op == '*' || op == '/' || op == '^' || op == '#') {
-        return 1; // pentru operatori
+        return 1;
     } else if (op == '(' || op == '[') {
         return 2;
     } else if (op == ')' || op == ']') {
