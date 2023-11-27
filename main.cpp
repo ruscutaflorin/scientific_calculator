@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Calculator.h"
+
 using namespace std;
 
 int main() {
@@ -14,10 +15,16 @@ int main() {
         if (input == "exit") {
             break;
         }
-
         c.setExpresie(input);
-        cout << c;
-
+        size_t xPos = c.getExpresie().find('x');
+        if (xPos != string::npos) {
+            // If 'x' is present, solve the equation
+            c.solveEquation();
+        } else {
+            // If 'x' is not present, evaluate the expression
+            c.calculeaza();
+            cout << c;
+        }
     }
 
     return 0;

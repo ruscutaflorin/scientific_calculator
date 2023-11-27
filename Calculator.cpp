@@ -1,7 +1,10 @@
 #include <iostream>
 #include <string>
+#include <valarray>
 #include "Calculator.h"
 #include "Shunting_Yard.h"
+#include "EquationSolver.h"
+
 using namespace std;
 
 Calculator::Calculator() {
@@ -164,6 +167,19 @@ double Calculator::customRoot(double base, double exponent) {
     return result;
 }
 
+void Calculator::solveEquation() {
+    size_t xPos = expresie.find('x');
+    if (xPos != string::npos) {
+        size_t xSquaredPos = expresie.find("x^2");
+        if (xSquaredPos != string::npos) {
+            EquationSolver::solveQuadraticEquation(expresie);
+        } else {
+            EquationSolver::solveLinearEquation(expresie);
+        }
+    } else {
+        cout << "Ecuatia nu contine x, considerat 0" << endl;
+    }
+}
 
 
 ostream& operator << (ostream& out, Calculator c)

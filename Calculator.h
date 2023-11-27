@@ -39,6 +39,8 @@ public:
     double customPow(double base, double exponent);
     double customRoot(double base, double exponent);
 
+    void solveEquation();
+
     friend istream& operator>>(istream& in, Calculator& c);
 
     friend ostream& operator << (ostream& out, Calculator c);

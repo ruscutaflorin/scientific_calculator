@@ -109,7 +109,8 @@
 			[
 				2,
 				4,
-				6
+				6,
+				8
 			]
 		}
 	],
@@ -159,6 +160,11 @@
 			"compileGroupIndex" : 0,
 			"path" : "EquationSolver.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "EquationSolver.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"
