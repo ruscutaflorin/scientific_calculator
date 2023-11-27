@@ -11,6 +11,10 @@ void Shunting_Yard::operator()(string expresie) {
     this->expresie = expresie;
 }
 
+bool Shunting_Yard::operator==(const Shunting_Yard& other) {
+    return this->expresie == other.expresie && this->rezultat == other.rezultat;
+}
+
 int Shunting_Yard::validareTip(char op) {
     if (isdigit(op) || op == '.') {
         return 0;

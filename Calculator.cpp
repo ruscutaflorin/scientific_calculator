@@ -3,7 +3,6 @@
 #include <valarray>
 #include "Calculator.h"
 #include "Shunting_Yard.h"
-#include "EquationSolver.h"
 
 using namespace std;
 
@@ -19,21 +18,20 @@ Calculator::Calculator(string expresie) {
 
 bool Calculator::operator!()
 {
-    bool ok = this->rezultat.length() > 0;
-    return ok;
+    return this->rezultat.empty();
 }
 
-int Calculator::operator[](int index)
+char Calculator::operator[](int index)
 {
-    if (index >= 0 && index < (rezultat.length() - 1))
-    {
+    if (index >= 0 && index < static_cast<int>(rezultat.length())) {
         return rezultat[index];
     }
     else {
-        cout << "Valoarea index-ului este negativa sau mai mare decat lungimea totala a rezultatului!";
-        return -1;
+        cout << "Invalid index or result is empty." << endl;
+        return '\0'; // Return a placeholder value or handle the error as needed
     }
 }
+
 
 void Calculator::setExpresie(string expresie) {
     // Remove spaces from the expression
@@ -141,7 +139,6 @@ double Calculator::customPow(double base, double exponent) {
 
 double Calculator::customRoot(double base, double exponent) {
     if (base < 0 && static_cast<int>(exponent) % 2 == 0) {
-        // Handle error for even root of a negative number
         throw std::domain_error("Error: Even root of a negative number");
     }
 

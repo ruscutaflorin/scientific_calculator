@@ -158,7 +158,6 @@ CMakeFiles/scientific_calculator.dir/Calculator.cpp.obj
  C:/Users/FLORIN/Desktop/scientific_calculator/Calculator.h
  C:/Users/FLORIN/Desktop/scientific_calculator/Stack.h
  C:/Users/FLORIN/Desktop/scientific_calculator/Shunting_Yard.h
- C:/Users/FLORIN/Desktop/scientific_calculator/EquationSolver.h
 
 CMakeFiles/scientific_calculator.dir/EquationSolver.cpp.obj
  C:/Users/FLORIN/Desktop/scientific_calculator/EquationSolver.cpp
@@ -296,6 +295,11 @@ CMakeFiles/scientific_calculator.dir/EquationSolver.cpp.obj
  C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc
  C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath
  C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/x86_64-w64-mingw32/include/math.h
+ C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstring
+ C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/x86_64-w64-mingw32/include/string.h
+ C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h
+ C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/sstream
+ C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/sstream.tcc
  C:/Users/FLORIN/Desktop/scientific_calculator/EquationSolver.h
 
 CMakeFiles/scientific_calculator.dir/Shunting_Yard.cpp.obj
@@ -708,4 +712,5 @@ CMakeFiles/scientific_calculator.dir/main.cpp.obj
  C:/Users/FLORIN/Desktop/scientific_calculator/Calculator.h
  C:/Users/FLORIN/Desktop/scientific_calculator/Stack.h
  C:/Users/FLORIN/Desktop/scientific_calculator/EquationSolver.h
+ C:/Users/FLORIN/Desktop/scientific_calculator/Shunting_Yard.h
 

@@ -154,5 +154,4 @@ CMakeFiles/scientific_calculator.dir/Calculator.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/indirect_array.h \
  C:\Users\FLORIN\Desktop\scientific_calculator\Calculator.h \
  C:\Users\FLORIN\Desktop\scientific_calculator\Stack.h \
- C:\Users\FLORIN\Desktop\scientific_calculator\Shunting_Yard.h \
- C:\Users\FLORIN\Desktop\scientific_calculator\EquationSolver.h
+ C:\Users\FLORIN\Desktop\scientific_calculator\Shunting_Yard.h

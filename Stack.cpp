@@ -57,11 +57,28 @@ Stack& Stack::operator=(const Stack& s) {
     return *this;
 }
 
+
+
 Stack Stack::operator+(const Stack& s) {
-    Stack copie = *this;
-    copie.nrLungime = copie.nrLungime + s.nrLungime;
+    Stack copie;
+    copie.nrLungime = this->nrLungime + s.nrLungime;
+
+    // Allocate memory for the new array
+    copie.array = new double[copie.nrLungime];
+
+    // Copy elements from the first stack
+    for (int i = 0; i < this->nrLungime; i++) {
+        copie.array[i] = this->array[i];
+    }
+
+    // Copy elements from the second stack
+    for (int i = 0; i < s.nrLungime; i++) {
+        copie.array[this->nrLungime + i] = s.array[i];
+    }
+
     return copie;
 }
+
 
 void Stack::push(double element) {
     double* temp = new double[nrLungime];

@@ -24,7 +24,7 @@ public:
 
     bool operator!();
 
-    int operator[](int index);
+    char operator[](int index);
 
     void setExpresie(string expresie);
 
@@ -37,8 +37,6 @@ public:
 
     double customPow(double base, double exponent);
     double customRoot(double base, double exponent);
-
-    void solveEquation();
 
     friend istream& operator>>(istream& in, Calculator& c);
 

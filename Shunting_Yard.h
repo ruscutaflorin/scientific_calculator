@@ -24,7 +24,7 @@ public:
 
     void operator()(string expresie);
 
-    explicit operator string();
+    bool operator==(const Shunting_Yard& other);
 
     int validareTip(char op);
 
