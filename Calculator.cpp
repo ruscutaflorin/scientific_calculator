@@ -28,13 +28,12 @@ char Calculator::operator[](int index)
     }
     else {
         cout << "Invalid index or result is empty." << endl;
-        return '\0'; // Return a placeholder value or handle the error as needed
+        return '\0';
     }
 }
 
 
 void Calculator::setExpresie(string expresie) {
-    // Remove spaces from the expression
     string expressionWithoutSpaces;
     for (char c : expresie) {
         if (!isspace(c)) {
@@ -110,7 +109,7 @@ string Calculator::evalRPN(string rpn) {
                     operandStack.push(customRoot(operand1, operand2));
                     break;
             }
-            pos++;  // Move to the next character
+            pos++;
         }
     }
 

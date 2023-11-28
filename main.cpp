@@ -57,12 +57,10 @@ int main() {
     EquationSolver difference = eq1 - eq2;
 
     cout << "Sum: " << sum << endl;
-    cout << "Difference: " << difference << endl;*/
+    cout << "Difference: " << difference << endl;
 
-   /* // Create two stacks
     Stack stack1, stack2;
 
-    // Populate the stacks with some values
     stack1.push(1.1);
     stack1.push(2.2);
     stack1.push(3.3);
@@ -74,7 +72,6 @@ int main() {
     // Use the overloaded + operator to add the two stacks
     Stack sumStack = stack1 + stack2;
 
-    // Display the original stacks and the sum stack
     cout << "Stack 1:" << endl << stack1;
     cout << "Stack 2:" << endl << stack2;
     cout << "Sum of Stack 1 and Stack 2:" << endl << sumStack;
@@ -83,13 +80,13 @@ int main() {
     Stack assignedStack;
     assignedStack = stack1;
 
-    // Display the original stack and the assigned stack
     cout << "Original Stack 1:" << endl << stack1;
-    cout << "Assigned Stack:" << endl << assignedStack;*/
+    cout << "Assigned Stack:" << endl << assignedStack;
 
-    /*// Test operator() and operator string()
+
+    // Test operator() and operator string()
     Shunting_Yard shuntingYard;
-    shuntingYard("3+5*(2-6)");
+    shuntingYard("3+5*(2+6)");
     Shunting_Yard sy2("3+5*(2+6)");
 
     // Print the original expression and the result
@@ -99,15 +96,13 @@ int main() {
         cout << "The expressions are equal." << endl;
     } else {
         cout << "The expressions are not equal." << endl;
-    }*/
+    }
 
 
-    /*Calculator calc;  // Create a Calculator instance
+    Calculator calc;
 
-    // Set an expression for the calculator
     calc.setExpresie("3+5*(2-6)");
 
-    // Calculate the result
     calc.calculeaza();
 
     // Check the ! operator
@@ -117,16 +112,15 @@ int main() {
         cout << "The result is not empty." << endl;
     }
 
-// Check the [] operator for characters
+    // Check the [] operator for characters
     char charAtIndex = calc[0];
     if (charAtIndex != '\0') {
-        cout << "Character at index 1: " << charAtIndex << endl;
+        cout << "Character at index 0: " << charAtIndex << endl;
     } else {
         cout << "Invalid index or result is empty." << endl;
     }
 
 
-    // Print the expression and the evaluated result
     cout << "Original Expression: " << calc.getExpresie() << endl;
     cout << "Result: " << calc.evalRPN(calc.getRezultat()) << endl;*/
 
