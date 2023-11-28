@@ -78,7 +78,7 @@ string Calculator::evalRPN(string rpn) {
             double parsedNumber = parseNumber(rpn, pos);
             operandStack.push(parsedNumber);
         } else if (rpn[pos] == ' ') {
-            pos++;  // Skip whitespace
+            pos++;
         } else {
             double operand2 = operandStack.getLastElement();
             operandStack.pop();
