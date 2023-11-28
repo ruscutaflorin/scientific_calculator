@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <valarray>
 #include "Calculator.h"
 #include "Shunting_Yard.h"
 

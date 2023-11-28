@@ -1,7 +1,3 @@
-//
-// Created by FLORIN on 24.11.2023.
-//
-
 #ifndef SCIENTIFIC_CALCULATOR_SHUNTING_YARD_H
 #define SCIENTIFIC_CALCULATOR_SHUNTING_YARD_H
 #pragma once
