@@ -2,6 +2,7 @@
 #include <string>
 #include "Calculator.h"
 #include "Shunting_Yard.h"
+#include <cmath>
 
 using namespace std;
 
@@ -59,13 +60,29 @@ string Calculator::getRezultat() {
     return this->rezultat;
 }
 
-
-
 double parseNumber(const string& rpn, size_t& pos) {
     size_t start = pos;
+    int decimalPoints = 0;
+
     while (isdigit(rpn[pos]) || rpn[pos] == '.' || (rpn[pos] == '-' && isdigit(rpn[pos + 1]))) {
+        if (rpn[pos] == '.') {
+            decimalPoints++;
+            if (decimalPoints > 1) {
+                cout << "Error: Invalid number format." << endl;
+                return 0.0;
+            }
+        }
         pos++;
+        if (pos >= rpn.length()) {
+            break;
+        }
     }
+
+    if (decimalPoints == 0 && pos == start) {
+        cout << "Error: No digits found for the number." << endl;
+        return 0.0;
+    }
+
     return stod(rpn.substr(start, pos - start));
 }
 
@@ -80,34 +97,51 @@ string Calculator::evalRPN(string rpn) {
         } else if (rpn[pos] == ' ') {
             pos++;
         } else {
+            if (operandStack.getSize() < 2) {
+                cout << "Error: Insufficient operands for operator." << endl;
+                return "Error: Invalid expression";
+            }
+
             double operand2 = operandStack.getLastElement();
             operandStack.pop();
             double operand1 = operandStack.getLastElement();
             operandStack.pop();
 
+            double result;
+
             switch (rpn[pos]) {
                 case '+':
-                    operandStack.push(operand1 + operand2);
+                    result = operand1 + operand2;
                     break;
                 case '-':
-                    operandStack.push(operand1 - operand2);
+                    result = operand1 - operand2;
                     break;
                 case '*':
-                    operandStack.push(operand1 * operand2);
+                    result = operand1 * operand2;
                     break;
                 case '/':
                     if (operand2 == 0) {
                         return "Error: Division by zero";
                     }
-                    operandStack.push(operand1 / operand2);
+                    result = operand1 / operand2;
                     break;
                 case '^':
-                    operandStack.push(customPow(operand1, operand2));
+                    result = customPow(operand1, operand2);
                     break;
                 case '#':
-                    operandStack.push(customRoot(operand1, operand2));
+                    result = customRoot(operand1, operand2);
                     break;
+                default:
+                    cout << "Error: Unknown operator." << endl;
+                    return "Error: Invalid expression";
             }
+
+            // Set very small values to zero
+            if (fabs(result) < 1e-10) {
+                result = 0.0;
+            }
+
+            operandStack.push(result);
             pos++;
         }
     }
@@ -115,9 +149,11 @@ string Calculator::evalRPN(string rpn) {
     if (operandStack.getSize() == 1) {
         return to_string(operandStack.getLastElement());
     } else {
+        cout << "Error: Too many operands." << endl;
         return "Error: Invalid expression";
     }
 }
+
 
 
 double Calculator::customPow(double base, double exponent) {
@@ -140,20 +176,24 @@ double Calculator::customRoot(double base, double exponent) {
         throw std::domain_error("Error: Even root of a negative number");
     }
 
-    double result = base;
-
-    if (result == 0.0) {
+    if (base == 0.0) {
         return 0.0;
     }
 
-    double epsilon = 1e-10;
-    double prevResult = 0.0;
+    double result = base;
+    const double epsilon = 1e-15;
+    const int maxIterations = 1000000;
 
-    while (abs(result - prevResult) > epsilon) {
-        prevResult = result;
-        result = ((exponent - 1.0) * result + base / customPow(result, exponent - 1)) / exponent;
+    for (int iteration = 0; iteration < maxIterations; ++iteration) {
+        double prevResult = result;
+        result = ((exponent - 1.0) * result + base / pow(result, exponent - 1)) / exponent;
+
+        if (std::abs(result - prevResult) <= epsilon) {
+            return result;
+        }
     }
 
+    std::cout << "Warning: Maximum iteration limit reached without convergence." << std::endl;
     return result;
 }
 

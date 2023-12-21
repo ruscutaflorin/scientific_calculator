@@ -15,7 +15,6 @@ Stack::Stack(double* array, int nrLungime) {
             this->array[i] = array[i];
         }
     }
-
     this->nrLungime = nrLungime;
 }
 
