@@ -128,6 +128,30 @@ scientific_calculator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/build
 .PHONY : scientific_calculator/fast
 
+BinaryFileHandler.obj: BinaryFileHandler.cpp.obj
+.PHONY : BinaryFileHandler.obj
+
+# target to build an object file
+BinaryFileHandler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.obj
+.PHONY : BinaryFileHandler.cpp.obj
+
+BinaryFileHandler.i: BinaryFileHandler.cpp.i
+.PHONY : BinaryFileHandler.i
+
+# target to preprocess a source file
+BinaryFileHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.i
+.PHONY : BinaryFileHandler.cpp.i
+
+BinaryFileHandler.s: BinaryFileHandler.cpp.s
+.PHONY : BinaryFileHandler.s
+
+# target to generate assembly for a file
+BinaryFileHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.s
+.PHONY : BinaryFileHandler.cpp.s
+
 Calculator.obj: Calculator.cpp.obj
 .PHONY : Calculator.obj
 
@@ -175,6 +199,30 @@ EquationSolver.s: EquationSolver.cpp.s
 EquationSolver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/EquationSolver.cpp.s
 .PHONY : EquationSolver.cpp.s
+
+FileHandler.obj: FileHandler.cpp.obj
+.PHONY : FileHandler.obj
+
+# target to build an object file
+FileHandler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/FileHandler.cpp.obj
+.PHONY : FileHandler.cpp.obj
+
+FileHandler.i: FileHandler.cpp.i
+.PHONY : FileHandler.i
+
+# target to preprocess a source file
+FileHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/FileHandler.cpp.i
+.PHONY : FileHandler.cpp.i
+
+FileHandler.s: FileHandler.cpp.s
+.PHONY : FileHandler.s
+
+# target to generate assembly for a file
+FileHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/FileHandler.cpp.s
+.PHONY : FileHandler.cpp.s
 
 Shunting_Yard.obj: Shunting_Yard.cpp.obj
 .PHONY : Shunting_Yard.obj
@@ -224,6 +272,30 @@ Stack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/Stack.cpp.s
 .PHONY : Stack.cpp.s
 
+TextFileHandler.obj: TextFileHandler.cpp.obj
+.PHONY : TextFileHandler.obj
+
+# target to build an object file
+TextFileHandler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.obj
+.PHONY : TextFileHandler.cpp.obj
+
+TextFileHandler.i: TextFileHandler.cpp.i
+.PHONY : TextFileHandler.i
+
+# target to preprocess a source file
+TextFileHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.i
+.PHONY : TextFileHandler.cpp.i
+
+TextFileHandler.s: TextFileHandler.cpp.s
+.PHONY : TextFileHandler.s
+
+# target to generate assembly for a file
+TextFileHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\scientific_calculator.dir\build.make CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.s
+.PHONY : TextFileHandler.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -257,18 +329,27 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... scientific_calculator
+	@echo ... BinaryFileHandler.obj
+	@echo ... BinaryFileHandler.i
+	@echo ... BinaryFileHandler.s
 	@echo ... Calculator.obj
 	@echo ... Calculator.i
 	@echo ... Calculator.s
 	@echo ... EquationSolver.obj
 	@echo ... EquationSolver.i
 	@echo ... EquationSolver.s
+	@echo ... FileHandler.obj
+	@echo ... FileHandler.i
+	@echo ... FileHandler.s
 	@echo ... Shunting_Yard.obj
 	@echo ... Shunting_Yard.i
 	@echo ... Shunting_Yard.s
 	@echo ... Stack.obj
 	@echo ... Stack.i
 	@echo ... Stack.s
+	@echo ... TextFileHandler.obj
+	@echo ... TextFileHandler.i
+	@echo ... TextFileHandler.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

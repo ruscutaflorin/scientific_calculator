@@ -60,6 +60,11 @@ string Calculator::getRezultat() {
     return this->rezultat;
 }
 
+string Calculator::getResult(){
+    this->calculeaza();
+    return this->evalRPN(this->getRezultat());
+}
+
 double parseNumber(const string& rpn, size_t& pos) {
     size_t start = pos;
     int decimalPoints = 0;
@@ -68,7 +73,6 @@ double parseNumber(const string& rpn, size_t& pos) {
         if (rpn[pos] == '.') {
             decimalPoints++;
             if (decimalPoints > 1) {
-                cout << "Error: Invalid number format." << endl;
                 return 0.0;
             }
         }
@@ -88,7 +92,6 @@ double parseNumber(const string& rpn, size_t& pos) {
 
 string Calculator::evalRPN(string rpn) {
     Stack operandStack;
-
     size_t pos = 0;
     while (pos < rpn.length()) {
         if (isdigit(rpn[pos]) || (rpn[pos] == '-' && isdigit(rpn[pos + 1]))) {
@@ -98,7 +101,6 @@ string Calculator::evalRPN(string rpn) {
             pos++;
         } else {
             if (operandStack.getSize() < 2) {
-                cout << "Error: Insufficient operands for operator." << endl;
                 return "Error: Invalid expression";
             }
 
@@ -135,7 +137,6 @@ string Calculator::evalRPN(string rpn) {
                     cout << "Error: Unknown operator." << endl;
                     return "Error: Invalid expression";
             }
-
             // Set very small values to zero
             if (fabs(result) < 1e-10) {
                 result = 0.0;

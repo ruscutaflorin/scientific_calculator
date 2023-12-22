@@ -138,13 +138,58 @@ CMakeFiles/scientific_calculator.dir/EquationSolver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scientific_calculator.dir/EquationSolver.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\FLORIN\Desktop\scientific_calculator\EquationSolver.cpp -o CMakeFiles\scientific_calculator.dir\EquationSolver.cpp.s
 
+CMakeFiles/scientific_calculator.dir/FileHandler.cpp.obj: CMakeFiles/scientific_calculator.dir/flags.make
+CMakeFiles/scientific_calculator.dir/FileHandler.cpp.obj: ../FileHandler.cpp
+CMakeFiles/scientific_calculator.dir/FileHandler.cpp.obj: CMakeFiles/scientific_calculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\FLORIN\Desktop\scientific_calculator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/scientific_calculator.dir/FileHandler.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scientific_calculator.dir/FileHandler.cpp.obj -MF CMakeFiles\scientific_calculator.dir\FileHandler.cpp.obj.d -o CMakeFiles\scientific_calculator.dir\FileHandler.cpp.obj -c C:\Users\FLORIN\Desktop\scientific_calculator\FileHandler.cpp
+
+CMakeFiles/scientific_calculator.dir/FileHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scientific_calculator.dir/FileHandler.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\FLORIN\Desktop\scientific_calculator\FileHandler.cpp > CMakeFiles\scientific_calculator.dir\FileHandler.cpp.i
+
+CMakeFiles/scientific_calculator.dir/FileHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scientific_calculator.dir/FileHandler.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\FLORIN\Desktop\scientific_calculator\FileHandler.cpp -o CMakeFiles\scientific_calculator.dir\FileHandler.cpp.s
+
+CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.obj: CMakeFiles/scientific_calculator.dir/flags.make
+CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.obj: ../TextFileHandler.cpp
+CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.obj: CMakeFiles/scientific_calculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\FLORIN\Desktop\scientific_calculator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.obj -MF CMakeFiles\scientific_calculator.dir\TextFileHandler.cpp.obj.d -o CMakeFiles\scientific_calculator.dir\TextFileHandler.cpp.obj -c C:\Users\FLORIN\Desktop\scientific_calculator\TextFileHandler.cpp
+
+CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\FLORIN\Desktop\scientific_calculator\TextFileHandler.cpp > CMakeFiles\scientific_calculator.dir\TextFileHandler.cpp.i
+
+CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\FLORIN\Desktop\scientific_calculator\TextFileHandler.cpp -o CMakeFiles\scientific_calculator.dir\TextFileHandler.cpp.s
+
+CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.obj: CMakeFiles/scientific_calculator.dir/flags.make
+CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.obj: ../BinaryFileHandler.cpp
+CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.obj: CMakeFiles/scientific_calculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\FLORIN\Desktop\scientific_calculator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.obj -MF CMakeFiles\scientific_calculator.dir\BinaryFileHandler.cpp.obj.d -o CMakeFiles\scientific_calculator.dir\BinaryFileHandler.cpp.obj -c C:\Users\FLORIN\Desktop\scientific_calculator\BinaryFileHandler.cpp
+
+CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\FLORIN\Desktop\scientific_calculator\BinaryFileHandler.cpp > CMakeFiles\scientific_calculator.dir\BinaryFileHandler.cpp.i
+
+CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\FLORIN\Desktop\scientific_calculator\BinaryFileHandler.cpp -o CMakeFiles\scientific_calculator.dir\BinaryFileHandler.cpp.s
+
 # Object files for target scientific_calculator
 scientific_calculator_OBJECTS = \
 "CMakeFiles/scientific_calculator.dir/main.cpp.obj" \
 "CMakeFiles/scientific_calculator.dir/Calculator.cpp.obj" \
 "CMakeFiles/scientific_calculator.dir/Shunting_Yard.cpp.obj" \
 "CMakeFiles/scientific_calculator.dir/Stack.cpp.obj" \
-"CMakeFiles/scientific_calculator.dir/EquationSolver.cpp.obj"
+"CMakeFiles/scientific_calculator.dir/EquationSolver.cpp.obj" \
+"CMakeFiles/scientific_calculator.dir/FileHandler.cpp.obj" \
+"CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.obj" \
+"CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.obj"
 
 # External object files for target scientific_calculator
 scientific_calculator_EXTERNAL_OBJECTS =
@@ -154,11 +199,14 @@ scientific_calculator.exe: CMakeFiles/scientific_calculator.dir/Calculator.cpp.o
 scientific_calculator.exe: CMakeFiles/scientific_calculator.dir/Shunting_Yard.cpp.obj
 scientific_calculator.exe: CMakeFiles/scientific_calculator.dir/Stack.cpp.obj
 scientific_calculator.exe: CMakeFiles/scientific_calculator.dir/EquationSolver.cpp.obj
+scientific_calculator.exe: CMakeFiles/scientific_calculator.dir/FileHandler.cpp.obj
+scientific_calculator.exe: CMakeFiles/scientific_calculator.dir/TextFileHandler.cpp.obj
+scientific_calculator.exe: CMakeFiles/scientific_calculator.dir/BinaryFileHandler.cpp.obj
 scientific_calculator.exe: CMakeFiles/scientific_calculator.dir/build.make
 scientific_calculator.exe: CMakeFiles/scientific_calculator.dir/linklibs.rsp
 scientific_calculator.exe: CMakeFiles/scientific_calculator.dir/objects1.rsp
 scientific_calculator.exe: CMakeFiles/scientific_calculator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\FLORIN\Desktop\scientific_calculator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable scientific_calculator.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\FLORIN\Desktop\scientific_calculator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable scientific_calculator.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\scientific_calculator.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

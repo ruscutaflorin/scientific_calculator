@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/FLORIN/Desktop/scientific_calculator/BinaryFileHandler.cpp">
+			<Option target="scientific_calculator"/>
+		</Unit>
+		<Unit filename="C:/Users/FLORIN/Desktop/scientific_calculator/BinaryFileHandler.h">
+			<Option target="scientific_calculator"/>
+		</Unit>
 		<Unit filename="C:/Users/FLORIN/Desktop/scientific_calculator/Calculator.cpp">
 			<Option target="scientific_calculator"/>
 		</Unit>
@@ -96,6 +102,12 @@
 		<Unit filename="C:/Users/FLORIN/Desktop/scientific_calculator/EquationSolver.h">
 			<Option target="scientific_calculator"/>
 		</Unit>
+		<Unit filename="C:/Users/FLORIN/Desktop/scientific_calculator/FileHandler.cpp">
+			<Option target="scientific_calculator"/>
+		</Unit>
+		<Unit filename="C:/Users/FLORIN/Desktop/scientific_calculator/FileHandler.h">
+			<Option target="scientific_calculator"/>
+		</Unit>
 		<Unit filename="C:/Users/FLORIN/Desktop/scientific_calculator/Shunting_Yard.cpp">
 			<Option target="scientific_calculator"/>
 		</Unit>
@@ -106,6 +118,12 @@
 			<Option target="scientific_calculator"/>
 		</Unit>
 		<Unit filename="C:/Users/FLORIN/Desktop/scientific_calculator/Stack.h">
+			<Option target="scientific_calculator"/>
+		</Unit>
+		<Unit filename="C:/Users/FLORIN/Desktop/scientific_calculator/TextFileHandler.cpp">
+			<Option target="scientific_calculator"/>
+		</Unit>
+		<Unit filename="C:/Users/FLORIN/Desktop/scientific_calculator/TextFileHandler.h">
 			<Option target="scientific_calculator"/>
 		</Unit>
 		<Unit filename="C:/Users/FLORIN/Desktop/scientific_calculator/main.cpp">

@@ -30,6 +30,7 @@ public:
     void calculeaza();
 
     string getRezultat();
+    string getResult();
     string evalRPN(string rpn);
 
     double customPow(double base, double exponent);
