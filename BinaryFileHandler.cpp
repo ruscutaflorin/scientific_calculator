@@ -1,48 +1,64 @@
 #include "BinaryFileHandler.h"
 
-void BinaryFileHandler::addEquationResultPair(const string& equation, const string& result) {
-    equationResultList.push_back(make_pair(equation, result));
+
+void BinaryFileHandler::addEquationResultPair(const std::string& equation, const std::string& result) {
+    equationResultList.emplace_back(equation, result);
 }
 
-void BinaryFileHandler::readFromFile(const string& filename) {
-    ifstream file(filename, ios::binary);
-    if (file.is_open()) {
-        equationResultList.clear();
-        size_t size;
-        file.read(reinterpret_cast<char*>(&size), sizeof(size));
-        equationResultList.resize(size);
-        file.read(reinterpret_cast<char*>(equationResultList.data()), sizeof(pair<string, string>) * size);
-        file.close();
-        cout << "Data successfully loaded from binary file:" << filename << endl;
-    } else {
-        cerr << "Unable to open binary file:" << filename << endl;
+void BinaryFileHandler::readFromFile(const std::string& filename) {
+    std::ifstream file(filename, std::ios::binary);
+    if (!file.is_open()) {
+        std::cerr << "Unable to open binary file: " << filename << std::endl;
+        return;
     }
+
+    equationResultList.clear();
+
+    size_t size;
+    file.read(reinterpret_cast<char*>(&size), sizeof(size));
+
+    equationResultList.resize(size);
+
+    for (auto& equationResultPair : equationResultList) {
+        std::getline(file, equationResultPair.first, '\0');
+        std::getline(file, equationResultPair.second, '\0');
+    }
+
+    file.close();
+    std::cout << "Data successfully loaded from binary file: " << filename << std::endl;
 }
 
-void BinaryFileHandler::writeToFile(const string& filename) {
-    ofstream file(filename, ios::binary);
-    if (file.is_open()) {
-        size_t size = equationResultList.size();
-        file.write(reinterpret_cast<const char*>(&size), sizeof(size));
-        file.write(reinterpret_cast<const char*>(equationResultList.data()), sizeof(pair<string, string>) * size);
-        file.close();
-        cout << "Data successfully written to binary file:" << filename << endl;
-    } else {
-        cerr << "Unable to open binary file for writing:" << filename << endl;
+void BinaryFileHandler::writeToFile(const std::string& filename) {
+    std::ofstream file(filename, std::ios::binary);
+    if (!file.is_open()) {
+        std::cerr << "Unable to open binary file for writing: " << filename << std::endl;
+        return;
     }
+
+    size_t size = equationResultList.size();
+    file.write(reinterpret_cast<const char*>(&size), sizeof(size));
+
+    for (const auto& equationResultPair : equationResultList) {
+        file.write(equationResultPair.first.c_str(), equationResultPair.first.size() + 1);
+        file.write(equationResultPair.second.c_str(), equationResultPair.second.size() + 1);
+    }
+
+    file.close();
+    std::cout << "Data successfully written to binary file: " << filename << std::endl;
 }
 
 void BinaryFileHandler::displayFileInfo() const {
-    cout << "Displaying information specific to binary file handling." << endl;
+    std::cout << "Displaying information specific to binary file handling." << std::endl;
 }
 
 void BinaryFileHandler::displayImportedData() const {
     if (equationResultList.empty()) {
-        cout << "No data has been imported." << endl;
-    } else {
-        cout << "Imported Equation and Result Pairs:" << endl;
+        std::cout << "No data has been imported." << std::endl;
+    }
+    else {
+        std::cout << "Imported Equation and Result Pairs:" << std::endl;
         for (const auto& equationResultPair : equationResultList) {
-            cout << equationResultPair.first << " = " << equationResultPair.second << endl;
+            std::cout << equationResultPair.first << " = " << equationResultPair.second << std::endl;
         }
     }
 }
