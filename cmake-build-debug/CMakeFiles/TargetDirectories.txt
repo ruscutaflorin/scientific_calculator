@@ -1,3 +1,0 @@
-C:/Users/FLORIN/Desktop/scientific_calculator/cmake-build-debug/CMakeFiles/scientific_calculator.dir
-C:/Users/FLORIN/Desktop/scientific_calculator/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/FLORIN/Desktop/scientific_calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
